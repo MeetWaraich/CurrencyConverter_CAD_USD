@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
+
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -13,7 +13,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     private EditText CAD, USD;
     private Button regBtn;
-    private TextView output;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,9 +55,7 @@ public class MainActivity extends AppCompatActivity {
         double cad = Double.parseDouble(CAD.getText().toString());
         double usd = cad*1.36;
         USD.setText(String.format("%.2f",usd));
-//        Toast.makeText(this,
-//                String.format("%s Canadian Dollar equals %f", CAD.getText(), usd),
-//                Toast.LENGTH_LONG).show();
+        Toast.makeText(this, String.format("%s Canadian Dollar equals %f", CAD.getText(), usd), Toast.LENGTH_LONG).show();
     }
 
     @SuppressLint("DefaultLocale")
@@ -65,9 +63,7 @@ public class MainActivity extends AppCompatActivity {
         double usd = Double.parseDouble(USD.getText().toString());
         double cad = usd*0.74;
         CAD.setText(String.format("%.2f",cad));
-//        Toast.makeText(this,
-//                String.format("%s Canadian Dollar equals %f", USD.getText(), usd),
-//                Toast.LENGTH_LONG).show();
+       Toast.makeText(this, String.format("%s Canadian Dollar equals %f", USD.getText(), usd), Toast.LENGTH_LONG).show();
 
     }
 }
